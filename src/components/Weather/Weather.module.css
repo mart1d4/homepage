@@ -1,0 +1,84 @@
+.weatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.weatherTitle {
+    font-size: 3rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+}
+
+.weatherContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+.weatherContent > p > span {
+    position: relative;
+    font-weight: 600;
+    cursor: default;
+}
+
+.feelsLikeTooltip {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    top: 180%;
+    transform: translateX(-50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: var(--accent-secondary);
+    color: var(--foreground-secondary);
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0.75rem;
+    animation: grow 0.2s ease-in-out;
+}
+
+.feelsLikeTooltip::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -4px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--accent-secondary);
+}
+
+.feelsLikeTooltip::before {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    content: '';
+    height: 150%;
+    width: 40%;
+    transform: translateX(-50%);
+}
+
+.weatherIcon {
+    width: 5rem;
+    user-select: none;
+}
+
+@keyframes grow {
+    0% {
+        transform: translateX(-50%) scale(0);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
