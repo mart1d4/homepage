@@ -30,6 +30,7 @@ const Time = () => {
                 method='GET'
                 target='_blank'
                 onSubmit={() => {
+                    search.length > 0 &&
                     setTimeout(() => {
                         setSearch('');
                     }, 1000);
