@@ -42,22 +42,30 @@ const Weather = () => {
                     width={42}
                     height={42}
                 />
-                <p>
-                    <span
-                        onMouseEnter={() => ref.current.style.display = 'flex'}
-                        onMouseLeave={() => ref.current.style.display = 'none'}
-                    >
-                        {weather?.current?.temp}°C
+                {
+                    weather ? (
+                        <p>
+                            <span
+                                onMouseEnter={() => ref.current.style.display = 'flex'}
+                                onMouseLeave={() => ref.current.style.display = 'none'}
+                            >
+                                {weather?.current?.temp}°C
 
-                        <span
-                            className={styles.feelsLikeTooltip}
-                            ref={ref}
-                        >
-                            Feels like {' ' + weather?.current?.feels_like}°C
-                        </span>
-                    </span>
-                    {' | ' + weather?.current?.weather[0].description}
-                </p>
+                                <span
+                                    className={styles.feelsLikeTooltip}
+                                    ref={ref}
+                                >
+                                    Feels like {' ' + weather?.current?.feels_like}°C
+                                </span>
+                            </span>
+                            {' | ' + weather?.current?.weather[0].description}
+                        </p>
+                    ) : (
+                            <p>
+                                Loading...
+                        </p>
+                    )
+                }
             </div>
         </section>
     );
