@@ -30,7 +30,6 @@ const Time = () => {
                 method='GET'
                 target='_blank'
                 onSubmit={() => {
-                    search.length > 0 &&
                     setTimeout(() => {
                         setSearch('');
                     }, 1000);
@@ -45,6 +44,8 @@ const Time = () => {
                     onChange={(e) => setSearch(e.target.value)}
                     className={styles.searchInput}
                     autoFocus
+                    maxLength={2048}
+                    required
                 />
 
                 <button

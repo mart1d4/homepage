@@ -34,31 +34,30 @@ const listCards = [
     },
     {
         icon: <>
-                <path d='M12 15h-6.5a2.5 2.5 0 1 1 0 -5h.5'></path>
-                <path d='M15 12v6.5a2.5 2.5 0 1 1 -5 0v-.5'></path>
-                <path d='M12 9h6.5a2.5 2.5 0 1 1 0 5h-.5'></path>
-                <path d='M9 12v-6.5a2.5 2.5 0 0 1 5 0v.5'></path>
+                <polyline points='7 8 3 12 7 16'></polyline>
+                <polyline points='17 8 21 12 17 16'></polyline>
+                <line x1='14' y1='4' x2='10' y2='20'></line>
             </>,
         content: [
             {
-                name: 'First Item',
-                url: 'https://www.',
+                name: 'React Docs',
+                url: 'https://www.reactjs.org/docs/getting-started.html',
             },
             {
-                name: 'Second Item',
-                url: 'https://www.',
+                name: 'NextJS Docs',
+                url: 'https://www.nextjs.org/docs',
             },
             {
-                name: 'Third Item',
-                url: 'https://www.',
+                name: 'Vercel',
+                url: 'https://www.vercel.com/',
             },
             {
-                name: 'Fourth Item',
-                url: 'https://www.',
+                name: 'The Odin Project',
+                url: 'https://www.theodinproject.com/',
             },
             {
-                name: 'Fifth Item',
-                url: 'https://www.',
+                name: 'Tabler Icons',
+                url: 'https://www.tabler-icons.io/',
             },
         ]
     }

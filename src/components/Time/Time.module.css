@@ -31,7 +31,7 @@
 }
 
 .search input:focus {
-    outline: 3px solid #2871a280;
+    outline: 3px solid var(--accent-primary);
     outline-offset: 2px;
 }
 

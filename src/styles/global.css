@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 :root {
-    --background-primary: #202020;
-    --background-secondary: #252525;
-    --background-tertiary: #353535;
-    --foreground-primary: #ffffff;
-    --accent-primary: #4d97ff;
-    --accent-secondary: #2871a2;
+    --background-primary: #242933;
+    --background-secondary: #2e3440;
+    --background-tertiary: #3b4252;
+    --foreground-primary: #eceff4;
+    --foreground-secondary: #e5e9f0;
+    --accent-primary: #5e81ac;
+    --accent-secondary: #81a1c1;
 }
 
 * {
