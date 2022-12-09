@@ -30,13 +30,18 @@
     user-select: none;
 }
 
-.search input:focus {
+.search input:hover {
     outline: 3px solid var(--accent-primary);
-    outline-offset: 2px;
+}
+
+.search input:focus {
+    outline: 3px solid var(--accent-primary-opacity);
+    outline-offset: 3px;
 }
 
 .searchButton {
-    margin-right: 0.25rem;
+    height: calc(100% - 10px);
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,8 +51,8 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    height: 100%;
     aspect-ratio: 1;
+    border-radius: 5px;
 }
 
 .searchButton > svg {

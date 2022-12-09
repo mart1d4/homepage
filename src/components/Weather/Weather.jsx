@@ -49,7 +49,7 @@ const Weather = () => {
                                 onMouseEnter={() => ref.current.style.display = 'flex'}
                                 onMouseLeave={() => ref.current.style.display = 'none'}
                             >
-                                {weather?.current?.temp}°C
+                                {weather?.current?.temp}°C {' '}
 
                                 <span
                                     className={styles.feelsLikeTooltip}

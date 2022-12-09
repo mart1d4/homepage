@@ -7,7 +7,13 @@
     --foreground-primary: #eceff4;
     --foreground-secondary: #e5e9f0;
     --accent-primary: #5e81ac;
+    --accent-primary-opacity: #5e81ac80;
     --accent-secondary: #81a1c1;
+}
+
+::selection {
+    background-color: var(--accent-primary);
+    color: var(--foreground-primary);
 }
 
 * {
@@ -40,4 +46,9 @@ svg {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+*:focus {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 2px;
 }

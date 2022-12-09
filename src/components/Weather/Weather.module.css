@@ -46,6 +46,8 @@
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
     padding: 0.5rem 0.75rem;
     animation: grow 0.2s ease-in-out;
+    letter-spacing: normal;
+    cursor: auto;
 }
 
 .feelsLikeTooltip::after {
@@ -68,7 +70,7 @@
     transform: translateX(-50%);
     content: '';
     height: 150%;
-    width: 40%;
+    width: 60%;
     transform: translateX(-50%);
 }
 

@@ -19,6 +19,7 @@
     width: clamp(175px, 40%, 210px);
     aspect-ratio: 3 / 2;
     transition: all 0.15s ease-in-out;
+    user-select: none;
 }
 
 .list:hover {
@@ -52,6 +53,10 @@
     width: 100%;
     padding: 0.7rem 1rem;
     border-radius: 5px;
+}
+
+.listItem:focus {
+    background-color: var(--background-primary);
 }
 
 .listItem:hover {

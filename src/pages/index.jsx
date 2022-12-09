@@ -7,7 +7,7 @@ const Main = () => {
         <>
             <Head>
                 <title>Home Page</title>
-                <link rel='icon' href='/images/favicon.webp' />
+                <link rel='icon' href='/images/favicon.svg' />
             </Head>
             <main
                 className={styles.main}
