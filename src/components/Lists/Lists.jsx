@@ -1,4 +1,5 @@
 import styles from './Lists.module.css';
+import { motion } from 'framer-motion';
 
 const listCards = [
     {
@@ -70,9 +71,13 @@ const Lists = () => {
         >
             {
                 listCards.map((list, index) => (
-                    <div
+                    <motion.div
                         key={index}
                         className={styles.list}
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0 }
+                        }}
                     >
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -101,7 +106,7 @@ const Lists = () => {
                                 ))
                             }
                         </ul>
-                    </div>
+                    </motion.div>
                 ))
             }
         </section>

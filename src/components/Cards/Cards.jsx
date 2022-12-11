@@ -1,4 +1,5 @@
 import styles from './Cards.module.css';
+import { motion } from 'framer-motion';
 
 const cardEntries = [
     {
@@ -66,13 +67,27 @@ const Cards = () => {
             className={styles.cardsContainer}
         >
             {
-                cardEntries.map((cardEntry) => (
-                    <a
+                cardEntries.map((cardEntry, index) => (
+                    <motion.a
                         href={cardEntry.url}
                         target='_blank'
                         rel='noopener noreferrer'
                         key={cardEntry.title}
                         className={styles.card}
+                        whileHover={{
+                            scale: 1.05,
+                            boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+                            transition: {
+                                duration: 0.05,
+                            },
+                        }}
+                        whileTap={{
+                            scale: 0.95,
+                            transition: {
+                                duration: 0.05,
+                            },
+                        }}
+                        
                     >
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -80,7 +95,7 @@ const Cards = () => {
                         >
                             {cardEntry.icon}
                         </svg>
-                    </a>
+                    </motion.a>
                 ))
             }
         </section>

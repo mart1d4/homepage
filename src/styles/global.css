@@ -26,7 +26,7 @@
 html,
 body,
 #__next {
-    overflow-x: hidden;
+    overflow: hidden;
     min-width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -51,4 +51,12 @@ svg {
 *:focus {
     outline: 3px solid var(--accent-primary);
     outline-offset: 2px;
+}
+
+@media screen and (max-width: 1050px) {
+    html,
+    body,
+    #__next {
+        overflow-y: auto;
+    }
 }
