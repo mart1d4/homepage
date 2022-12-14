@@ -37,7 +37,7 @@ const cardEntries = [
 ];
 
 const Cards = () => {
-    const [displayTooltip, setDisplayTooltip] = useState(false);
+    const [displayTooltip, setDisplayTooltip] = useState(null);
     const tooltip = useRef(null);
 
     return (
@@ -50,22 +50,21 @@ const Cards = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                         className={styles.card}
-                        onMouseEnter={() => setDisplayTooltip(true)}
+                        onMouseEnter={() => setDisplayTooltip(cardEntry.title)}
                         onMouseLeave={() => {
                             if (!tooltip?.current?.contains(document.activeElement)) {
-                                setDisplayTooltip(false);
+                                setDisplayTooltip(null);
                             }
                         }}
                     >
                         {cardEntry.icon}
                         <Tooltip
-                            show={displayTooltip}
+                            show={displayTooltip === cardEntry.title}
                             ref={tooltip}
                             position={index < 3 ? 'top' : 'bottom'}
                         >
                             {cardEntry.title}
                         </Tooltip>
-
                     </a>
                 ))
             }
