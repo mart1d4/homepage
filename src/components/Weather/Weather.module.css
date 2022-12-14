@@ -8,13 +8,13 @@
     height: 100%;
 }
 
-.weatherTitle {
+.weatherContainer h1 {
     font-size: 3rem;
     line-height: 1.5rem;
     font-weight: 500;
 }
 
-.weatherContent {
+.weatherContainer > div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,28 +22,11 @@
     text-transform: capitalize;
 }
 
-.weatherContent > p > span {
+.tempSpan {
     position: relative;
     font-weight: 600;
     cursor: default;
     letter-spacing: 0.1rem;
-}
-
-.feelsLikeTooltip {
-    white-space: nowrap;
-    position: absolute;
-    left: 50%;
-    top: 150%;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 500;
-    background-color: var(--background-secondary);
-    color: var(--foreground-secondary);
-    border-radius: 5px;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-    padding: 0.5rem 0.75rem;
-    letter-spacing: normal;
 }
 
 .feelsLikeTooltip::after {

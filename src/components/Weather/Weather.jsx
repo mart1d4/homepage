@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 const axios = require('axios');
 import styles from './Weather.module.css';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Tooltip } from '../Elements';
 
 const Weather = () => {
     const [weather, setWeather] = useState(null);
     const [displayTooltip, setDisplayTooltip] = useState(false);
-    const tempSpan = useRef(null);
+    const tooltip = useRef(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,63 +27,51 @@ const Weather = () => {
     }, []);
 
     return (
-        <section
-            className={styles.weatherContainer}
-        >
-            <h1
-                className={styles.weatherTitle}
-            >
-                {new Date().toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
+        <section className={styles.weatherContainer}>
+            <h1>
+                {new Date().toLocaleString('en-US', {
+                    weekday: 'short',
+                    month: 'short',
+                    day: 'numeric',
+                })}
             </h1>
-            <div
-                className={styles.weatherContent}
-            >
+
+            <div>
                 <Image
-                    src={weather ? `/images/${weather?.current.weather[0].icon}.png` : '/images/no-weather.png'}
+                    src={weather
+                            ? `/images/${weather?.current.weather[0].icon}.png`
+                            : '/images/no-weather.png'}
                     alt={weather?.current.weather[0].description}
                     width={42}
                     height={42}
                 />
-                {
-                    weather ? (
-                        <p>
-                            <span
-                                onMouseEnter={() => setDisplayTooltip(true)}
-                                onMouseLeave={() => setDisplayTooltip(false)}
-                                ref={tempSpan}
+                {weather ? (
+                    <p>
+                        <span
+                            className={styles.tempSpan}
+                            onMouseEnter={() => setDisplayTooltip(true)}
+                            onMouseLeave={() => {
+                                if (!tooltip?.current?.contains(document.activeElement)) {
+                                    setDisplayTooltip(false);
+                                }
+                            }}
+                        >
+                            {weather?.current?.temp}°C {' '}
+                            <Tooltip
+                                show={displayTooltip}
+                                ref={tooltip}
+                                position='bottom'
                             >
-                                {weather?.current?.temp}°C {' '}
-
-                                <AnimatePresence>
-                                    {
-                                        displayTooltip && (
-                                            <motion.span
-                                                className={styles.feelsLikeTooltip}
-                                                onMouseEnter={() => setDisplayTooltip(true)}
-                                                onMouseLeave={() => {
-                                                    if (!tempSpan.current.contains(event.relatedTarget)) {
-                                                        setDisplayTooltip(false);
-                                                    }
-                                                }}
-                                                initial={{ opacity: 0, transform: 'translateX(-50%) scale(0)' }}
-                                                animate={{ opacity: 1, transform: 'translateX(-50%) scale(1)' }}
-                                                exit={{ opacity: 0, transform: 'translateX(-50%) scale(0)' }}
-                                                transition={{ duration: 0.2, ease: 'easeInOut' }}
-                                            >
-                                                Feels like {' ' + weather?.current?.feels_like}°C
-                                            </motion.span>
-                                        )
-                                    }
-                                </AnimatePresence>
-                            </span>
-                            {' | ' + weather?.current?.weather[0].description}
-                        </p>
-                    ) : (
-                            <p>
-                                Loading...
-                        </p>
-                    )
-                }
+                                Feels like {' ' + weather?.current?.feels_like}°C
+                            </Tooltip>
+                        </span>
+                        {' | ' + weather?.current?.weather[0].description}
+                    </p>
+                ) : (
+                        <p>
+                            Loading...
+                    </p>
+                )}
             </div>
         </section>
     );

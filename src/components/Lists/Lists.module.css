@@ -15,14 +15,18 @@
     padding: 1rem;
     background-color: var(--background-secondary);
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     width: clamp(175px, 40%, 210px);
     aspect-ratio: 3 / 2;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-out;
     user-select: none;
 }
 
-.listIcon {
+.list:hover {
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.list > svg {
     margin-bottom: 1rem;
 }
 

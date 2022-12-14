@@ -1,0 +1,12 @@
+.tooltip {
+    white-space: nowrap;
+    position: absolute;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: var(--background-secondary);
+    color: var(--foreground-secondary);
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0.75rem;
+}

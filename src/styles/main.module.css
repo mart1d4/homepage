@@ -1,6 +1,6 @@
 .main {
-    min-width: 100vw;
-    min-height: 100vh;
+    min-width: clamp(300px, 100vw, 1300px);
+    min-height: clamp(300px, 100vh, 900px);
     padding: clamp(2rem, 5vw, 5rem);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
