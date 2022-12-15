@@ -29,30 +29,6 @@
     letter-spacing: 0.1rem;
 }
 
-.feelsLikeTooltip::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: -4px;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid var(--background-secondary);
-}
-
-.feelsLikeTooltip::before {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    content: '';
-    height: 150%;
-    width: 60%;
-    transform: translateX(-50%);
-}
-
 .weatherIcon {
     user-select: none;
 }

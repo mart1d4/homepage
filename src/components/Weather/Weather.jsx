@@ -63,6 +63,12 @@ const Weather = () => {
                                 position='bottom'
                             >
                                 Feels like {' ' + weather?.current?.feels_like}°C
+                                Feels like {' ' + weather?.current?.feels_like}°C
+                                Feels like {' ' + weather?.current?.feels_like}°C
+                                Feels like {' ' + weather?.current?.feels_like}°C
+                                Feels like {' ' + weather?.current?.feels_like}°C
+                                Feels like {' ' + weather?.current?.feels_like}°C
+                                Feels like {' ' + weather?.current?.feels_like}°C
                             </Tooltip>
                         </span>
                         {' | ' + weather?.current?.weather[0].description}

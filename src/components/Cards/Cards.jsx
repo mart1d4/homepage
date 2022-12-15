@@ -1,7 +1,7 @@
 import styles from './Cards.module.css';
 import icons from '../../assets/icons';
 import { Tooltip } from '../Elements';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const cardEntries = [
     {
@@ -39,6 +39,11 @@ const cardEntries = [
 const Cards = () => {
     const [displayTooltip, setDisplayTooltip] = useState(null);
     const tooltip = useRef(null);
+
+    useEffect(() => {
+      console.log('first');
+    }, [displayTooltip])
+    
 
     return (
         <section className={styles.cardsContainer}>
