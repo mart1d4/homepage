@@ -10,6 +10,9 @@
     padding: 0.5rem 0.75rem;
     letter-spacing: 0.05rem;
     cursor: auto;
+    word-wrap: break-word;
+    white-space: nowrap;
+    z-index: 1000;
 }
 
 .cursorConsistency {
@@ -18,10 +21,6 @@
 
 .arrow {
     position: absolute;
-    left: 50%;
-    top: -4px;
-    transform: translateX(-50%) rotate(45deg);
-    background-color: var(--background-secondary);
-    width: 8px;
-    height: 8px;
+    width: 0;
+    height: 0;
 }

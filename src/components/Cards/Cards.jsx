@@ -1,7 +1,7 @@
 import styles from './Cards.module.css';
 import icons from '../../assets/icons';
 import { Tooltip } from '../Elements';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 
 const cardEntries = [
     {
@@ -25,26 +25,21 @@ const cardEntries = [
         url: 'https://figma.com',
     },
     {
-        title: 'Spotim',
-        icon: icons.spotim,
-        url: 'https://admin.spot.im/spot/sp_ANQXRpqH/moderation/comments/folder/pending/tag/all?priority=true&sortBy=newest',
+        title: 'Gmail',
+        icon: icons.gmail,
+        url: 'https://mail.google.com/mail/u/0/?ogbl',
     },
     {
-        title: 'UPEC',
-        icon: icons.upec,
-        url: 'https://eprel.u-pec.fr/my/',
+        title: 'Framer',
+        icon: icons.framer,
+        url: 'https://www.framer.com/motion/',
     },
 ];
 
 const Cards = () => {
     const [displayTooltip, setDisplayTooltip] = useState(null);
-    const tooltip = useRef(null);
-
-    useEffect(() => {
-      console.log('first');
-    }, [displayTooltip])
+    const tooltips = useRef([]);
     
-
     return (
         <section className={styles.cardsContainer}>
             {
@@ -57,19 +52,22 @@ const Cards = () => {
                         className={styles.card}
                         onMouseEnter={() => setDisplayTooltip(cardEntry.title)}
                         onMouseLeave={() => {
-                            if (!tooltip?.current?.contains(document.activeElement)) {
+                            if (!tooltips?.current[index]?.contains(document.activeElement)) {
                                 setDisplayTooltip(null);
                             }
                         }}
                     >
                         {cardEntry.icon}
-                        <Tooltip
-                            show={displayTooltip === cardEntry.title}
-                            ref={tooltip}
-                            position={index < 3 ? 'top' : 'bottom'}
+                        
+                        <span
+                            ref={el => tooltips.current[index] = el}
                         >
-                            {cardEntry.title}
-                        </Tooltip>
+                            <Tooltip
+                                show={displayTooltip === cardEntry.title}
+                                position={index < 3 ? 'top' : 'bottom'}
+                                title={cardEntry.title}
+                            />
+                        </span>
                     </a>
                 ))
             }

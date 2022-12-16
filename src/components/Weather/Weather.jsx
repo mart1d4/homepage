@@ -41,7 +41,7 @@ const Weather = () => {
                     src={weather
                             ? `/images/${weather?.current.weather[0].icon}.png`
                             : '/images/no-weather.png'}
-                    alt={weather?.current.weather[0].description}
+                    alt={weather?.current.weather[0].description ?? 'No weather data'}
                     width={42}
                     height={42}
                 />
@@ -57,19 +57,16 @@ const Weather = () => {
                             }}
                         >
                             {weather?.current?.temp}°C {' '}
-                            <Tooltip
-                                show={displayTooltip}
+                            
+                            <span
                                 ref={tooltip}
-                                position='bottom'
                             >
-                                Feels like {' ' + weather?.current?.feels_like}°C
-                                Feels like {' ' + weather?.current?.feels_like}°C
-                                Feels like {' ' + weather?.current?.feels_like}°C
-                                Feels like {' ' + weather?.current?.feels_like}°C
-                                Feels like {' ' + weather?.current?.feels_like}°C
-                                Feels like {' ' + weather?.current?.feels_like}°C
-                                Feels like {' ' + weather?.current?.feels_like}°C
-                            </Tooltip>
+                                <Tooltip
+                                    show={displayTooltip}
+                                    position='bottom'
+                                    title={`Feels like ${weather?.current?.feels_like}°C`}
+                                />
+                            </span>
                         </span>
                         {' | ' + weather?.current?.weather[0].description}
                     </p>

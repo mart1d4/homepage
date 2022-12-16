@@ -4,20 +4,20 @@ import icons from '../../assets/icons';
 const listCards = [
     [
         {
-            name: 'First Item',
-            url: 'https://www.',
+            name: 'UPEC',
+            url: 'https://eprel.u-pec.fr/my/',
         },
         {
-            name: 'Second Item',
-            url: 'https://www.',
+            name: 'ADE',
+            url: 'https://ade.u-pec.fr/direct/',
         },
         {
-            name: 'Third Item',
-            url: 'https://www.',
+            name: 'Caseine',
+            url: 'https://moodle.caseine.org/',
         },
         {
-            name: 'Fourth Item',
-            url: 'https://www.',
+            name: 'SpotIm',
+            url: 'https://admin.spot.im/spot/sp_ANQXRpqH/moderation/comments/folder/pending/tag/all?priority=true&sortBy=newest',
         },
         {
             name: 'Fifth Item',

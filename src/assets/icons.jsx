@@ -37,6 +37,15 @@ const icons = {
         <path d='M22 9l-10 -4l-10 4l10 4l10 -4v6' />
         <path d='M6 10.6v5.4a6 3 0 0 0 12 0v-5.4' />
     </svg>,
+
+    gmail: <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <rect x='3' y='5' width='18' height='14' rx='2' />
+        <polyline points='3 7 12 13 21 7' />
+    </svg>,
+
+    framer: <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M6 15h12l-12 -12h12v6h-12v6l6 6v-6' />
+    </svg>,
     
     firstListIcon:  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
         <path d='M21 19h-18l9 -15' />
@@ -46,9 +55,9 @@ const icons = {
         <path d='M15.415 5.971h.015' />
     </svg>,
     secondListIcon: <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
-        <polyline points='7 8 3 12 7 16'></polyline>
-        <polyline points='17 8 21 12 17 16'></polyline>
-        <line x1='14' y1='4' x2='10' y2='20'></line>
+        <polyline points='7 8 3 12 7 16' />
+        <polyline points='17 8 21 12 17 16' />
+        <line x1='14' y1='4' x2='10' y2='20' />
     </svg>,
 };
 
