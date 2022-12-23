@@ -22,10 +22,13 @@
     text-transform: capitalize;
 }
 
-.tempSpan {
-    position: relative;
+.weather {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.weather span {
     font-weight: 600;
-    cursor: default;
     letter-spacing: 0.1rem;
 }
 

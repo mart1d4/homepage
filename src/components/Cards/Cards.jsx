@@ -37,38 +37,25 @@ const cardEntries = [
 ];
 
 const Cards = () => {
-    const [displayTooltip, setDisplayTooltip] = useState(null);
-    const tooltips = useRef([]);
-    
     return (
         <section className={styles.cardsContainer}>
             {
                 cardEntries.map((cardEntry, index) => (
-                    <a
+                    <Tooltip
                         key={cardEntry.title}
-                        href={cardEntry.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className={styles.card}
-                        onMouseEnter={() => setDisplayTooltip(cardEntry.title)}
-                        onMouseLeave={() => {
-                            if (!tooltips?.current[index]?.contains(document.activeElement)) {
-                                setDisplayTooltip(null);
-                            }
-                        }}
+                        text={cardEntry.title}
+                        pos={index < 3 ? 'top' : 'bottom'}
+                        arrow
                     >
-                        {cardEntry.icon}
-                        
-                        <span
-                            ref={el => tooltips.current[index] = el}
+                        <a
+                            href={cardEntry.url}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className={styles.card}
                         >
-                            <Tooltip
-                                show={displayTooltip === cardEntry.title}
-                                position={index < 3 ? 'top' : 'bottom'}
-                                title={cardEntry.title}
-                            />
-                        </span>
-                    </a>
+                            {cardEntry.icon}
+                        </a>
+                    </Tooltip>
                 ))
             }
         </section>

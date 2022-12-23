@@ -6,8 +6,6 @@ import { Tooltip } from '../Elements';
 
 const Weather = () => {
     const [weather, setWeather] = useState(null);
-    const [displayTooltip, setDisplayTooltip] = useState(false);
-    const tooltip = useRef(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -46,30 +44,17 @@ const Weather = () => {
                     height={42}
                 />
                 {weather ? (
-                    <p>
-                        <span
-                            className={styles.tempSpan}
-                            onMouseEnter={() => setDisplayTooltip(true)}
-                            onMouseLeave={() => {
-                                if (!tooltip?.current?.contains(document.activeElement)) {
-                                    setDisplayTooltip(false);
-                                }
-                            }}
+                    <div className={styles.weather}>
+                        <Tooltip
+                            text={`Feels like ${weather?.current?.feels_like}°C`}
+                            arrow
                         >
-                            {weather?.current?.temp}°C {' '}
-                            
-                            <span
-                                ref={tooltip}
-                            >
-                                <Tooltip
-                                    show={displayTooltip}
-                                    position='bottom'
-                                    title={`Feels like ${weather?.current?.feels_like}°C`}
-                                />
+                            <span>
+                                {weather?.current?.temp}°C,
                             </span>
-                        </span>
-                        {' | ' + weather?.current?.weather[0].description}
-                    </p>
+                        </Tooltip>
+                        <p>{weather?.current?.weather[0].description}</p>
+                    </div>
                 ) : (
                         <p>
                             Loading...
