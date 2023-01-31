@@ -1,16 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './Time.module.css';
 
 const Time = () => {
     const [time, setTime] = useState('');
     const [search, setSearch] = useState('');
 
+    const inputRef = useRef(null);
+
     useEffect(() => {
         setTime(new Date().toLocaleTimeString());
-        
+
         const interval = setInterval(() => {
             setTime(new Date().toLocaleTimeString());
         }, 1000);
+
+        inputRef.current.focus();
 
         return () => clearInterval(interval);
     }, []);
@@ -37,6 +41,7 @@ const Time = () => {
                 className={styles.search}
             >
                 <input
+                    ref={inputRef}
                     name='q'
                     type='text'
                     placeholder='Search Google'

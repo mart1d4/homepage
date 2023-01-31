@@ -6,9 +6,13 @@
     --background-tertiary: #3b4252;
     --foreground-primary: #eceff4;
     --foreground-secondary: #e5e9f0;
+    --foreground-tertiary: #d8dee9;
     --accent-primary: #5e81ac;
     --accent-primary-opacity: #5e81ac80;
     --accent-secondary: #81a1c1;
+    --elevation-low: 0 0 0 1px rgba(0, 0, 0, 0.15);
+    --elevation-medium: 0 4px 4px rgba(0, 0, 0, 0.15);
+    --elevation-high: 0 8px 16px rgba(0, 0, 0, 0.24);
 }
 
 ::selection {
